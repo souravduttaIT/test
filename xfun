@@ -24,4 +24,4 @@ function fetchAndDisplayPastebinContent() {
 }
 
 // Call the function when the page is loaded
-document.addEventListener('DOMContentLoaded', fetchAndDisplayPastebinContent);
+//document.addEventListener('DOMContentLoaded', fetchAndDisplayPastebinContent);

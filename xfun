@@ -1,0 +1,27 @@
+// Function to fetch content from Pastebin and display the result
+function fetchAndDisplayPastebinContent() {
+    const pastebinUrl = 'https://pastebin.com/raw/wvnmmeUG'; // Use the raw link
+
+    // Fetch the content using JavaScript's fetch API
+    fetch(pastebinUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Display the fetched data in the console
+            console.log('Fetched content from Pastebin:');
+            console.log(data);
+
+            // Optionally, display it on the webpage by modifying the DOM
+            document.getElementById('output').textContent = data;
+        })
+        .catch(error => {
+            console.error('There was a problem fetching the Pastebin content:', error);
+        });
+}
+
+// Call the function when the page is loaded
+document.addEventListener('DOMContentLoaded', fetchAndDisplayPastebinContent);
